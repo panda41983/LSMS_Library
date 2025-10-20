@@ -84,15 +84,24 @@ class Wave:
     
     def column_mapping(self, request, data_info = None):
         """
-        Retrieve column mappings for a given dataset request.And map into dictionary to be ready for df_data_grabber
+        Retrieve column mappings for a given dataset request and map into a 
+        dictionary to be ready for df_data_grabber.
+
         Input:
-            request: str, the request data name in data_scheme (e.g. 'cluster_features', 'household_roster', 'food_acquired', 'interview_date')
+                request: str, the request data name in data_scheme 
+                (e.g. 'cluster_features', 'household_roster', 'food_acquired', 
+                'interview_date')
+
         Output:
-            final_mapping: dict, {file_name: {'idxvars': idxvar_dic, 'myvars': myvars_dic}}
+                final_mapping: dict, {file_name: {'idxvars': idxvar_dic, 
+                'myvars': myvars_dic}}
+
         Example:
-            {'data_file.dta': {'idxvars': {'cluster': ('cluster', <function format_id at 0x7f7f5b3f6c10>)},
-                              'myvars': {'region': ('region', <function format_id at 0x7f7f5b3f6c10>),
-                                         'urban': ('urban', <function format_id at 0x7f7f5b3f6c10>)}}}
+                {'data_file.dta': {'idxvars': {'cluster': ('cluster', 
+                <function format_id at 0x7f7f5b3f6c10>)}), 
+                'myvars': {'region': ('region', <function format_id 
+                at 0x7f7f5b3f6c10>), 
+                'urban': ('urban', <function format_id at 0x7f7f5b3f6c10>)}}}
         """
         # data_info = self.resources[request]
         
@@ -170,6 +179,7 @@ class Wave:
                     final_mapping[i] = {'idxvars': idxvars_updated, 'myvars': myvars_updated}
                 
             return final_mapping
+        
     @property
     def categorical_mapping(self):
         org_fn = self.file_path / "_" / "categorical_mapping.org"
@@ -179,6 +189,24 @@ class Wave:
             return {}
         else:
             return dic.update(all_dfs_from_orgfile(org_fn))
+
+    @property
+    def license(self):
+        license_path = self.file_path / "Documentation" / "LICENSE.org"
+        if license_path.exists():
+            with open(license_path, 'r') as file:
+                return file.read()
+        warnings.warn(f"License file not found: {license_path}")
+        return ""
+
+    @property
+    def data_source(self):
+        source_path = self.file_path / "Documentation" / "SOURCE.org"
+        if source_path.exists():
+            with open(source_path, 'r') as file:
+                return file.read()
+        warnings.warn(f"Data source not found: {source_path}")
+        return ""
 
     @property
     def mapping(self):

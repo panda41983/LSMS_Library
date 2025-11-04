@@ -1,0 +1,48 @@
+household_roster:
+    file:
+        - ../Data/emc2014_p2_individu_27022015.dta
+    idxvars:
+       
+        i: menage
+        pid: numind
+        
+
+    myvars:
+
+        Sex:
+            - B2
+            - mapping:
+                Masculin: Male
+                Féminin: Female
+        Age:
+            - B4
+            - {}
+        Marital:
+            - B6
+            - mapping:
+                Marié(e) monogame: Married monogamously
+                Marié(e) polygame: Married polygamously
+                Union libre: Free union
+                Célibataire (jamais marié(e): Single (never married)
+                Divorcé(e) / séparé(e): Divorced / separated
+                Veuf (veuve): Widower
+                Valeur manquante: Missing
+                .A: .A
+        Relation:
+            - B5
+            - mapping:
+                Chef de ménage: Head of household
+                Conjoint(e): Spouse
+                Fils ou fille: Son or daughter
+                Petit fils/fille: Grandson/daughter
+                Père / mère: Father / mother
+                Frère/s?ur: Brother/sister
+                Autre parent: Other parent
+                Domestique/personnel de maison: Domestic/household staff
+                Sans lien de parenté: Not related
+                .A: .A
+    myvars_type_override:
+        Age: category
+
+
+

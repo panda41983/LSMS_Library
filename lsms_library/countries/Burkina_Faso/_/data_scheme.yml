@@ -1,0 +1,10 @@
+Country: Burkina_Faso
+
+Data Scheme:
+  household_roster:
+    index: (i,pid,t)
+    Sex: str
+    Age: float
+    Relation: str
+    Marital: str
+

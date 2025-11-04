@@ -1,0 +1,47 @@
+Country: Burkina_Faso
+Wave: 2021-22
+household_roster:
+    file:
+        - ../Data/s01_me_bfa2021.dta
+    idxvars:
+        i: hhid
+        pid: pid
+        
+
+    myvars:
+
+        Sex:
+            - s01q01
+            - mapping:
+                Masculin: Male
+                Féminin: Female
+        Age: s01q04a
+        Marital:
+            - s01q07
+            - mapping:
+                null: Unknown
+                Célibataire: Single
+                Marié(e) monogame: Married monogamously
+                Marié(e) polygame: Married polygamously
+                Union libre: Free union
+                Veuf(ve): Widower
+                Divorcé(e): Divorced
+                Séparé(e): Separated
+                NaN: Missing
+        Relation:
+            - s01q02
+            - mapping:
+                Chef de ménage: Head of household
+                Conjoint ( e ): Spouse
+                Fils, Fille: Son or daughter
+                Père, Mère: Father / mother
+                Petit fils, petite fille: Grandson/daughter
+                Grand-parents: Grandparents
+                Frère, sœur: Brother/sister
+                Neveu/Nièce: Nephew/Niece
+                Autres Parents du CM/Conjoint: Other parents of CM/Spouse
+                Personne non apparentée au CM/Conjoint: Not related to CM/Spouse
+                Domestique ou parent du domestique: Domestic/household staff
+
+                
+

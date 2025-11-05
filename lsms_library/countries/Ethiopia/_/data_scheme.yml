@@ -1,0 +1,11 @@
+Country: Ethiopia
+
+Data Scheme:
+  household_roster: # USE_MAKEFILE
+    index: (t, i, pid)
+    Sex: str
+    Age: int
+    Relation: str
+
+  household_characteristics: # USE_MAKEFILE
+

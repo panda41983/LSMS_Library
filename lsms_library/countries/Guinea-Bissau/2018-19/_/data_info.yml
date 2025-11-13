@@ -1,0 +1,39 @@
+Country: Guinea-Bissau
+Wave: 2018-19
+household_roster:
+    file:
+        - ../Data/s01_me_gnb2018.dta
+    idxvars:
+        i: menage
+        pid: s01q00a
+    myvars:
+        Sex:
+            - s01q01
+            - mapping:
+                Masculino: Male
+                Feminino: Female
+        Age: s01q04a
+        Marital:
+            - s01q07
+            - mapping:
+                Solteiro (a): Never married
+                Casado(a) monogâmico(a): Married monogamous
+                Casado(a) poligâmico(a): Married polygamous
+                União de facto: Living together (consensual union)
+                Viúvo(a): Widowed
+                Divorciado(a): Divorced
+                Separado(a): Separated
+        Relation: 
+            - s01q02
+            - mapping: 
+                Chefe do agregado familiar: Head of household
+                Cônjuge: Spouse
+                Filho, Filha: Son/Daughter
+                Pai, Mãe: Parent (Father/Mother)
+                Neto, neta: Grandchild
+                Avós: Grandparent
+                Irmão, irmã: Sibling
+                Outros parentes do CAF/cônjuge: Other relative of head/spouse
+                Pessoa não aparentada com o CAF/cônjuge: Non-relative of head/spouse
+                Empregado(a) doméstico(a) ou parente do empregado(a) doméstico(a): Domestic employee or relative of domestic employee
+

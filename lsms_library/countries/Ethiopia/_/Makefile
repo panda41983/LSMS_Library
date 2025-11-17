@@ -22,15 +22,6 @@ food_acquired_parquet := $(food_acquired:.py=.parquet)
 ../var/food_acquired.parquet: food_acquired.py $(food_acquired_parquet) ../var/other_features.parquet
 	python food_acquired.py
 
-household_roster = $(shell find $(rounds) -name household_roster.py)
-household_roster_parquet := $(household_roster:.py=.parquet)
-
-../%/_/household_roster.parquet:
-	(cd $(@D) && python household_roster.py)
-
-../var/household_roster.parquet: household_roster.py $(household_roster_parquet)
-	python household_roster.py
-
 household_characteristics = $(shell find $(rounds) -name household_characteristics.py)
 household_characteristics_parquet := $(household_characteristics:.py=.parquet)
 

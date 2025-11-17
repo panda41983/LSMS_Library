@@ -1,9 +1,6 @@
 Country: Burkina_Faso
 
 Data Scheme:
-
-  household_characteristics: # USE_MAKEFILE
-  
   household_roster:
     index: (i,pid,t)
     Sex: str

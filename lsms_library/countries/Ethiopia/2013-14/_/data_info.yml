@@ -1,0 +1,35 @@
+Country: Ethiopia
+Wave: 2013-14
+
+household_roster:
+    file:
+        - ../Data/sect1_hh_w2.dta
+    idxvars:
+        i: household_id2
+        pid: individual_id2
+    myvars:
+        Sex:
+            - hh_s1q03
+            - mapping:
+                1: Male
+                2: Female
+        Age: hh_s1q04_a
+        Relation:
+            - hh_s1q02
+            - mapping:
+                1: Head
+                2: Spouse
+                3: Child
+                4: Grandchild
+                5: Parent
+                6: Sibling
+                7: Niece/Nephew
+                8: Uncle/Aunt
+                9: Son-in-law/Daughter-in-law
+                10: Parent-in-law
+                11: Sibling-in-law
+                12: Grandparent
+                13: Other relative
+                14: Servant
+                15: Non-relative
+

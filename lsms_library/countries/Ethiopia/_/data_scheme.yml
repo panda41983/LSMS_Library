@@ -1,0 +1,10 @@
+Country: Ethiopia
+
+Data Scheme:
+  household_roster: 
+    index: (t, i, pid)
+    Sex: str
+    Age: int
+    Relation: str
+
+

@@ -1,5 +1,6 @@
 Country: Burkina_Faso
 Wave: 2018-19
+
 household_roster:
     file:
         - ../Data/s01_me_bfa2018.dta

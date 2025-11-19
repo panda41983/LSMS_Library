@@ -5,8 +5,9 @@ household_roster:
     file:
         - ../Data/s01_me_bfa2018.dta
     idxvars:
-         
-        i: menage       
+        i:
+            - grappe
+            - menage
         pid: s01q00a
         
 

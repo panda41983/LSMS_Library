@@ -1,15 +1,21 @@
 Country: Ethiopia
-Wave: 2018-19
+Wave: 2021-22
 
-
+panel_ids:
+    file:
+        - ../Data/sect_cover_hh_w5.dta
+    idxvars:
+        i: household_id
+    myvars:
+        previous_i: household_id
 household_roster:
     file:
-        - ../Data/sect1_hh_w4.dta
+        - ../Data/sect1_hh_w5.dta
     idxvars:
         i: household_id
         pid: individual_id
     myvars:
-        Sex:
+        Sex: 
             - s1q02
             - mapping:
                 1. Male: Male

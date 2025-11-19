@@ -595,6 +595,31 @@ class Country:
             self._compute_panel_ids()
         return self._updated_ids_cache
     
+    def panel_attrition(self, waves=None, index='i', return_ids=False, split_households_new_sample=True):
+        """
+        Produce an upper-triangular matrix showing the number of households 
+        that transition between rounds.
+        
+        Args:
+            waves: List of waves to analyze (default: all waves)
+            index: Index variable to track (default: 'i' for household)
+            return_ids: If True, return both matrix and IDs dict
+            split_households_new_sample: If True, treat split households as new sample
+            
+        Returns:
+            DataFrame showing panel structure, optionally with IDs dict
+        """
+        from lsms_library.local_tools import panel_attrition as _panel_attrition
+        
+        if waves is None:
+            waves = self.waves
+        
+        # Get household roster across all waves
+        df = self.household_roster(waves=waves)
+        
+        return _panel_attrition(df, waves=waves, index=index, 
+                               return_ids=return_ids, 
+                               split_households_new_sample=split_households_new_sample)
 
     def __getattr__(self, name):
         '''
